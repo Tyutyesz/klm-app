@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
+
+## Getting started
+In order to have any mock data for this project, please start the **KLM_backend** server. <br>
+You can find the provided code [here](https://github.com/Tyutyesz/klm_backend)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
