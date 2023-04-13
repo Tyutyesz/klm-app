@@ -1,0 +1,84 @@
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100dvh - var(--nav-height));
+}
+.form-card{
+  width: 400px;
+  border: 1px solid var(--primary-color);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+h1{
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+h1:after{
+  content:'';
+  width: 30px;
+  height:4px;
+  position: absolute;
+  bottom: -16px;
+  left: calc(50% - 15px);
+  background-color: var(--primary-color);
+}
+p{
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  line-height:1.5;
+  margin-bottom: 1.5rem;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+input, label{
+  display: block;
+}
+label{
+  margin-bottom: 0.25rem;
+  color: var(--primary-color);
+  font-weight: bolder;
+}
+input{
+  width: calc(100%  - 1.5rem);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+input:focus, input:active{
+  outline: 2px solid var(--primary-color);
+}
+
+.error-msg{
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+input.error, input.error:focus, input.error:active{
+  border: 2px solid var(--secondary-color);
+  outline: none;
+}
+
+@media screen and (max-width: 576px) {
+  main{
+    overflow: auto;
+    height: auto;
+  }
+  .form-card{
+    width: 100%;
+    border:none;
+    padding: 1rem 0.75rem;
+    margin-bottom: 2rem;
+  }
+}

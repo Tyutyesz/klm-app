@@ -1,0 +1,185 @@
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100dvh - var(--nav-height));
+}
+.booking-card{
+  width: 600px;
+  padding: 1rem;
+  border: 1px solid var(--primary-color);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.booking-card__booking-code{
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+.booking-card__depart-from, .booking-card__arrive-to{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.booking-card__arrow{
+  width: calc(100% - 240px);
+  display: inline-block;
+  margin: 0 20px;
+}
+.booking-card__arrow-{
+  display: inline-block;
+}
+.booking-card__arrow--mobile{
+  display: none;
+}
+.booking-card__qr{
+  width: 100px;
+  height: auto;
+}
+
+.boarding-pass{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 700px;
+  border: 1px solid var(--brand-color-grey);
+  margin-bottom: 1rem;
+}
+.boarding-pass h4{
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+.boarding-pass span{
+  font-size: 1rem;
+  text-align: center;
+}
+.boarding-pass__logo{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: var(--brand-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boarding-pass__header{
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--brand-color-grey);
+}
+.boarding-pass__2nd-row{
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  display: flex;
+  padding: 0.25rem;
+}
+.boarding-pass__2nd-row div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 0.25rem;
+}
+.boarding-pass__2nd-row h4, .boarding-pass__2nd-row span{
+  text-align: left;
+  width: 100%;
+}
+.boarding-pass__3rd-row{
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
+  display: flex;
+  padding: 0.25rem;
+}
+.boarding-pass__3rd-row div{
+  width: 25%;
+  padding: 0.25rem;
+}
+.boarding-pass__3rd-row div:last-of-type{
+  width: 40%;
+  margin-left: 10%;
+}
+.boarding-pass__3rd-row h4, .boarding-pass__3rd-row span{
+  text-align: left;
+  width: 100%;
+}
+.boarding-pass__4th-row{
+  grid-row: 4 / -1;
+  grid-column: 1 / -1;
+  display: flex;
+  padding: 0.25rem;
+}
+.boarding-pass__4th-row div{
+  width: 50%;
+  padding: 0.25rem;
+}
+.boarding-pass__4th-row h4{
+  text-align: left;
+}
+.boarding-pass__header div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  padding: 0.25rem;
+
+}
+.boarding-pass__logo svg{
+  height: 40px;
+  width: auto;
+  margin: 0.5rem 0;
+}
+
+
+@media screen and (max-width: 700px){
+  main{
+    overflow: auto;
+    height: auto;
+  }
+  .booking-card{
+    width: calc(100% - 24px);
+    margin-top: 1.5rem;
+
+  }
+  .booking-card__depart-from, .booking-card__arrive-to{
+    width: 50px;
+  }
+  .booking-card__arrow{
+    width: calc(100% - 140px);
+  }
+
+  .boarding-pass{
+    width: 100%;
+    max-width: 400px;
+  }
+  .boarding-pass h4{
+    font-size: 1rem;
+  }
+  .boarding-pass__header div{
+    width: 50%;
+  }
+  .boarding-pass__header div:last-of-type{
+    display: none;
+  }
+  .boarding-pass__3rd-row div, .boarding-pass__3rd-row div:last-of-type {
+    width: 30%;
+    margin: 0;
+  }
+  .boarding-pass__3rd-row div:first-of-type{
+    width: 40%;
+  }
+}

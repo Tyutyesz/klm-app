@@ -1,0 +1,15 @@
+header{
+  height: var(--nav-height);
+  background-color: var(--primary-color);
+  background-image: url('../../../assets/images/af_pattern_bg.png');
+  background-repeat: repeat-x;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h3{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,54 @@
+<app-header [title]="'Check-In'"></app-header>
+<main>
+  <div class="form-card">
+    <h1>Retrieve your <br> booking</h1>
+    <p>You can find your booking by filling out <br> your family name and the booking code <br> in your booking confirmation</p>
+    <form [formGroup]="loginForm"
+          (ngSubmit)="login()">
+      <label for="booking">Booking code</label>
+      <input type="text"
+             id="booking"
+             placeholder="PZIGZ3"
+             [formControl]="loginForm.controls['bookingCode']"
+             [ngClass]="loginForm.controls['bookingCode'].invalid && loginForm.controls['bookingCode'].touched ? 'error' : ''">
+      <span class="error-msg"
+            *ngIf="loginForm.controls['bookingCode'].errors?.['minlength'] && loginForm.controls['bookingCode'].touched">
+        Minimum 5 characters
+      </span>
+      <span class="error-msg"
+            *ngIf="loginForm.controls['bookingCode'].errors?.['maxlength'] && loginForm.controls['bookingCode'].touched">
+        Maximum 6 characters
+      </span>
+      <span class="error-msg"
+            *ngIf="loginForm.controls['bookingCode'].errors?.['pattern'] && loginForm.controls['bookingCode'].touched">
+        No special characters (._#@&, etc)
+      </span>
+      <span class="error-msg"
+            *ngIf="loginForm.controls['bookingCode'].errors?.['required'] && loginForm.controls['bookingCode'].touched">
+        This field is required
+      </span>
+
+      <label for="name">Family name</label>
+      <input type="text"
+             id="name"
+             placeholder="HESP"
+             [formControl]="loginForm.controls['name']"
+             [ngClass]="loginForm.controls['name'].invalid && loginForm.controls['name'].touched ? 'error' : ''">
+      <span class="error-msg"
+            *ngIf="loginForm.controls['name'].errors?.['minlength'] && loginForm.controls['name'].touched">
+        Minimum 2 characters
+      </span>
+      <span class="error-msg"
+            *ngIf="loginForm.controls['name'].errors?.['maxlength'] && loginForm.controls['name'].touched">
+        Maximum 30 characters
+      </span>
+      <span class="error-msg"
+            *ngIf="loginForm.controls['name'].errors?.['required'] && loginForm.controls['name'].touched">
+        This field is required
+      </span>
+      <app-button [text]="'Retrieve booking'" [type]="'submit'" [disabled]="loginForm.status === 'INVALID'"></app-button>
+    </form>
+  </div>
+  <br>
+  <app-button (click)="autoFill()" [text]="'Auto-fill'" [type]="'submit'"></app-button>
+</main>
